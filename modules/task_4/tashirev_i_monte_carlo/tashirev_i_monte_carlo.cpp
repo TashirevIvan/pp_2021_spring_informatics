@@ -71,7 +71,7 @@ double stdMonteCarlo(double(*f)(const std::vector<double>&),
             gen.seed(static_cast<unsigned int>(time(0)));
             std::vector<double> r1(mult);
             local_res[i] = 0;
-            for (int k = range.start; k < range.end; ++k) {
+            for (size_t k = range.start; k < range.end; ++k) {
                 for (size_t j = 0; j < mult; ++j)
                     r1[j] = r[j](gen);
                 local_res[i] += f(r1);
