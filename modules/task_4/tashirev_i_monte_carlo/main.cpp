@@ -27,19 +27,8 @@ TEST(Monte_carlo_integral_test, test_result_of_integral) {
     int num_th = 4;
     const int N = 2500000;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
     double res_seq = seqMonteCarlo(Integral_1, { a }, { b }, N * num_th);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto timeSeq = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Sequential time: " << timeSeq << std::endl;
-
-    t1 = std::chrono::high_resolution_clock::now();
     double res_std = stdMonteCarlo(Integral_1, { a }, { b }, N);
-    t2 = std::chrono::high_resolution_clock::now();
-    auto timePar = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Parallel time: " << timePar << std::endl;
 
     ASSERT_NEAR(res_seq, res_std, 0.5);
 }
@@ -50,19 +39,8 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_1) {
     int num_th = 4;
     const int N = 2500000;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
     double res_seq = seqMonteCarlo(Integral_2, a, b, N * num_th);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto timeSeq = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Sequential time: " << timeSeq << std::endl;
-
-    t1 = std::chrono::high_resolution_clock::now();
     double res_std = stdMonteCarlo(Integral_2, a, b, N);
-    t2 = std::chrono::high_resolution_clock::now();
-    auto timePar = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Parallel time: " << timePar << std::endl;
 
     ASSERT_NEAR(res_seq, res_std, 0.5);
 }
@@ -73,19 +51,8 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_2) {
     int num_th = 4;
     const int N = 2500000;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
     double res_seq = seqMonteCarlo(Integral_3, a, b, N * num_th);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto timeSeq = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Sequential time: " << timeSeq << std::endl;
-
-    t1 = std::chrono::high_resolution_clock::now();
     double res_std = stdMonteCarlo(Integral_3, a, b, N);
-    t2 = std::chrono::high_resolution_clock::now();
-    auto timePar = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Parallel time: " << timePar << std::endl;
 
     ASSERT_NEAR(res_seq, res_std, 0.5);
 }
@@ -96,19 +63,8 @@ TEST(Monte_carlo_integral_test, test_result_of_integral_3) {
     int num_th = 4;
     const int N = 2500000;
 
-    auto t1 = std::chrono::high_resolution_clock::now();
     double res_seq = seqMonteCarlo(Integral_3, a, b, N * num_th);
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto timeSeq = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Sequential time: " << timeSeq << std::endl;
-
-    t1 = std::chrono::high_resolution_clock::now();
     double res_std = stdMonteCarlo(Integral_3, a, b, N);
-    t2 = std::chrono::high_resolution_clock::now();
-    auto timePar = std::chrono::duration_cast<std::chrono::milliseconds>
-        (t2 - t1).count();
-    std::cout << " Parallel time: " << timePar << std::endl;
 
     ASSERT_NEAR(res_seq, res_std, 0.5);
 }
