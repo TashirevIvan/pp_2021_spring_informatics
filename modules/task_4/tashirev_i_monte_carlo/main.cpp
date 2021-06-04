@@ -2,7 +2,6 @@
 #include <gtest/gtest.h>
 #include <cmath>
 #include <vector>
-#include <chrono>
 #include "../../../modules/task_4/tashirev_i_monte_carlo/tashirev_i_monte_carlo.h"
 
 double Integral_1(const std::vector<double>& x) {
