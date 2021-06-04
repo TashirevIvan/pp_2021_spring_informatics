@@ -53,7 +53,7 @@ double stdMonteCarlo(double(*f)(const std::vector<double>&),
     std::vector<std::thread> threads;
     std::vector<double> local_res(num_threads);
     auto start = 0;
-    int k = steps % num_threads;
+    size_t k = steps % num_threads;
 
     for (size_t i = 0; i < num_threads; ++i) {
         my_range range;
